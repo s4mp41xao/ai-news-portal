@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "fix-deps": "rm -rf node_modules package-lock.json && npm install --legacy-peer-deps"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
