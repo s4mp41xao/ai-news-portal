@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import {
-  useAuthState,
   useSignInWithEmailAndPassword,
   useCreateUserWithEmailAndPassword,
   useSignInWithGoogle
@@ -19,7 +18,6 @@ import {
 import CloseIcon from '@mui/icons-material/Close'
 
 export default function Auth() {
-  const [user] = useAuthState(auth)
   const [isLogin, setIsLogin] = useState(true)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
