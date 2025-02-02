@@ -23,10 +23,9 @@ export default function Auth() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
 
-  const [signInWithEmailAndPassword, _, loginLoading, loginError] =
-    useSignInWithEmailAndPassword(auth)
+  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth)
 
-  const [createUserWithEmailAndPassword, __, registerLoading, registerError] =
+  const [createUserWithEmailAndPassword] =
     useCreateUserWithEmailAndPassword(auth)
 
   const [signInWithGoogle] = useSignInWithGoogle(auth)
@@ -45,6 +44,14 @@ export default function Auth() {
       } else {
         await createUserWithEmailAndPassword(email, password)
       }
+    } catch (err) {
+      setError(err.message)
+    }
+  }
+
+  const handleGoogleSignIn = async () => {
+    try {
+      await signInWithGoogle()
     } catch (err) {
       setError(err.message)
     }
@@ -103,13 +110,7 @@ export default function Auth() {
           inputProps={{ minLength: 6 }}
         />
 
-        <Button
-          type="submit"
-          variant="contained"
-          fullWidth
-          sx={{ mt: 2 }}
-          disabled={loginLoading || registerLoading}
-        >
+        <Button type="submit" variant="contained" fullWidth sx={{ mt: 2 }}>
           {isLogin ? 'Entrar' : 'Cadastrar'}
         </Button>
       </form>
@@ -118,7 +119,7 @@ export default function Auth() {
 
       <Button
         variant="outlined"
-        onClick={() => signInWithGoogle()}
+        onClick={handleGoogleSignIn}
         fullWidth
         sx={{ mb: 2 }}
       >
