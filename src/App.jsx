@@ -11,7 +11,12 @@ export default function App() {
     return (
       <Container
         maxWidth="lg"
-        sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}
+        sx={{
+          minHeight: '100vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
       >
         <CircularProgress size={60} />
       </Container>
@@ -19,9 +24,21 @@ export default function App() {
   }
 
   return (
-    <>
+    <Container
+      maxWidth="lg"
+      sx={{
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        py: 4
+      }}
+    >
       <CssBaseline />
-      <Container maxWidth="lg">{!user ? <Auth /> : <News />}</Container>
-    </>
+      <h1 style={{ textAlign: 'center', marginBottom: '2rem' }}>
+        AI News Portal
+      </h1>
+      {!user ? <Auth /> : <News />}
+    </Container>
   )
 }

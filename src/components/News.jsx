@@ -59,7 +59,15 @@ export default function News() {
 
   return (
     <>
-      <AppBar position="static" sx={{ mb: 4 }}>
+      <AppBar
+        position="static"
+        sx={{
+          mb: 4,
+          width: '100vw',
+          left: 0,
+          right: 0
+        }}
+      >
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             Bem-vindo, {auth.currentUser?.email}
@@ -74,7 +82,16 @@ export default function News() {
         </Toolbar>
       </AppBar>
 
-      <Grid container spacing={3} sx={{ p: 3 }}>
+      <Grid
+        container
+        spacing={3}
+        sx={{
+          p: 3,
+          maxWidth: 1200,
+          mx: 'auto',
+          justifyContent: 'center'
+        }}
+      >
         {news.map((article, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
             <Card

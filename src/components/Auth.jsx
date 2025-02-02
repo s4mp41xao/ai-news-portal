@@ -55,10 +55,14 @@ export default function Auth() {
       sx={{
         maxWidth: 400,
         mx: 'auto',
-        mt: 4,
+        mt: 8,
         p: 3,
         boxShadow: 3,
-        borderRadius: 2
+        borderRadius: 2,
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '50vh',
+        justifyContent: 'center'
       }}
     >
       <Typography variant="h5" gutterBottom>
