@@ -31,6 +31,7 @@ export default function App() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'center',
         py: 4
       }}
     >

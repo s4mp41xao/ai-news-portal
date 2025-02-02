@@ -54,6 +54,7 @@ export default function Auth() {
     <Box
       sx={{
         maxWidth: 400,
+        width: '100%',
         mx: 'auto',
         mt: 8,
         p: 3,
@@ -61,8 +62,8 @@ export default function Auth() {
         borderRadius: 2,
         display: 'flex',
         flexDirection: 'column',
-        minHeight: '50vh',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        minHeight: '50vh'
       }}
     >
       <Typography variant="h5" gutterBottom>
