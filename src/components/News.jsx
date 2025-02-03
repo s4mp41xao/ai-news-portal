@@ -109,7 +109,7 @@ export default function News() {
                 alt={article.title}
                 sx={{ objectFit: 'cover' }}
               />
-              <CardContent sx={{ flexGrow: 1 }}>
+              <CardContent sx={{ flexGrow: 1, paddingBottom: '60px' }}>
                 <Typography variant="h6" gutterBottom>
                   {article.title}
                 </Typography>
