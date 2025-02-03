@@ -110,7 +110,17 @@ export default function News() {
                 sx={{ objectFit: 'cover' }}
               />
               <CardContent sx={{ flexGrow: 1, paddingBottom: '60px' }}>
-                <Typography variant="h6" gutterBottom>
+                <Typography
+                  variant="h6"
+                  gutterBottom
+                  sx={{
+                    display: '-webkit-box',
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden',
+                    WebkitLineClamp: 2, // Limit to 2 lines
+                    height: '3em' // Adjust height to fit 2 lines
+                  }}
+                >
                   {article.title}
                 </Typography>
                 <Typography
