@@ -113,8 +113,19 @@ export default function News() {
                 <Typography variant="h6" gutterBottom>
                   {article.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary" paragraph>
-                  {article.description?.substring(0, 150)}...
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  paragraph
+                  sx={{
+                    display: '-webkit-box',
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden',
+                    WebkitLineClamp: 2, // Limit to 2 lines
+                    height: '3em' // Adjust height to fit 2 lines
+                  }}
+                >
+                  {article.description}
                 </Typography>
               </CardContent>
               <Button
