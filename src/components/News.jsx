@@ -95,7 +95,12 @@ export default function News() {
         {news.map((article, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
             <Card
-              sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+              sx={{
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative'
+              }}
             >
               <CardMedia
                 component="img"
@@ -111,21 +116,21 @@ export default function News() {
                 <Typography variant="body2" color="text.secondary" paragraph>
                   {article.description?.substring(0, 150)}...
                 </Typography>
-                <Button
-                  href={article.url}
-                  target="_blank"
-                  rel="noopener"
-                  variant="contained"
-                  sx={{
-                    position: 'absolute',
-                    bottom: 16,
-                    left: 16,
-                    zIndex: 1
-                  }}
-                >
-                  Ler Completo
-                </Button>
               </CardContent>
+              <Button
+                href={article.url}
+                target="_blank"
+                rel="noopener"
+                variant="contained"
+                sx={{
+                  position: 'absolute',
+                  bottom: 16,
+                  left: 16,
+                  zIndex: 1
+                }}
+              >
+                Ler Completo
+              </Button>
             </Card>
           </Grid>
         ))}
