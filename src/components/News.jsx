@@ -116,7 +116,12 @@ export default function News() {
                   target="_blank"
                   rel="noopener"
                   variant="contained"
-                  sx={{ mt: 'auto' }}
+                  sx={{
+                    position: 'absolute',
+                    bottom: 16,
+                    left: 16,
+                    zIndex: 1
+                  }}
                 >
                   Ler Completo
                 </Button>
