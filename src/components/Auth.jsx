@@ -1,4 +1,9 @@
+import React from 'react'
+import { Button } from '@mui/material'
+import DarkMode from './DarkMode'
+
 import { useState } from 'react'
+
 import {
   useSignInWithEmailAndPassword,
   useCreateUserWithEmailAndPassword,
@@ -6,7 +11,6 @@ import {
 } from 'react-firebase-hooks/auth'
 import { auth } from '../firebase'
 import {
-  Button,
   TextField,
   Box,
   Typography,
@@ -74,6 +78,7 @@ export default function Auth() {
         {isLogin ? 'Acesse sua conta' : 'Crie uma conta'}
       </Typography>
 
+      <DarkMode />
       <Collapse in={!!error}>
         <Alert
           severity="error"

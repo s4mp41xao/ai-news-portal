@@ -3,6 +3,7 @@ import Auth from './components/Auth'
 import News from './components/News'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from './firebase'
+import { DarkMode } from '@mui/icons-material'
 
 export default function App() {
   const [user, loading] = useAuthState(auth)
@@ -38,6 +39,7 @@ export default function App() {
       <CssBaseline />
       <h1 style={{ textAlign: 'center', marginBottom: '2rem' }}>
         AI News Portal
+        <DarkMode />
       </h1>
       {!user ? <Auth /> : <News />}
     </Container>
